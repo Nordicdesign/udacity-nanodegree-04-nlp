@@ -1,4 +1,5 @@
 import checkURL from './checkURL'
+import "regenerator-runtime/runtime.js"
 
 export default async function formHandler(e) {
   e.preventDefault()
