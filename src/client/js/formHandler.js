@@ -1,6 +1,9 @@
-export default async function formHandler(e) {
+import checkURL from './checkURL'
+
+export default function formHandler(e) {
   e.preventDefault()
-  console.log('holla')
   let url = document.getElementById('url').value
-  console.log(url)
+  if (checkURL(url)) {
+    console.log("do something")
+  }
 }
