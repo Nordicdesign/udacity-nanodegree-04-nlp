@@ -2,6 +2,7 @@ var express = require('express')
 const app = express()
 const dotenv = require("dotenv")
 const cors = require('cors')
+const fetch = require('node-fetch')
 
 dotenv.config()
 const key = process.env.API_KEY
@@ -11,29 +12,25 @@ app.use(express.json())
 app.use(cors())
 
 
+async function analyseData(url) {
+  const apiUrl = 'https://api.meaningcloud.com/sentiment-2.1'
+  const requestOptions = {
+    method: 'POST',
+    redirect: 'follow'
+  }
 
-// const formdata = new FormData();
-// formdata.append("key", "YOUR API KEY");
-// formdata.append("txt", "YOUR TEXT HERE");
-// formdata.append("lang", "TEXT LANGUAGE HERE");  // 2-letter code, like en es fr ...
-//
-// const requestOptions = {
-//   method: 'POST',
-//   body: formdata,
-//   redirect: 'follow'
-// };
-//
-// const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-//   .then(response => ({
-//     status: response.status,
-//     body: response.json()
-//   }))
-//   .then(({ status, body }) => console.log(status, body))
-//   .catch(error => console.log('error', error));
+  try {
+    const response = await fetch(`${apiUrl}?key=${key}&lang=en&url=${url}`, requestOptions)
+    const result = await response.json()
+    return result
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-app.post('/analyse', (req,res) => {
-  console.log(req.body)
-  res.send(req.body)
+app.post('/analyse', async function(req,res) {
+  const result = await analyseData(req.body.url)
+  res.send(result)
 })
 
 
