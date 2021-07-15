@@ -1,0 +1,11 @@
+header {
+  background: #ccc;
+  padding: $baseline/2 $baseline;
+  h1 {
+    font-size: 2rem;
+  }
+  nav {
+    font-size: 1.6rem;
+    padding-bottom: $baseline/2;
+  }
+}

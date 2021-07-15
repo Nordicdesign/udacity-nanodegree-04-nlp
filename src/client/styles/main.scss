@@ -1,0 +1,26 @@
+@import "reset";
+@import "variables";
+@import "typography";
+@import "header";
+@import "forms";
+@import "footer";
+
+html, body {
+  font-size: 62.5%;
+  font-family: $font-stack;
+  color: $main;
+}
+
+section {
+  max-width: 600px;
+  width: 96%;
+  margin: $baseline auto;
+}
+
+.article-form {
+  margin: $baseline*4 auto $baseline*2;
+
+  form {
+    margin-top: $baseline*4;
+  }
+}
