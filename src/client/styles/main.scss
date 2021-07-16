@@ -24,3 +24,35 @@ section {
     margin-top: $baseline*4;
   }
 }
+
+.results {
+  display: none;
+  &.visible {
+    display: block;
+  }
+
+  dl {
+    margin: 0;
+    padding: 0;
+
+    dd {
+      margin: 0;
+      color: #ccc;
+    }
+
+    dt {
+      margin-bottom: $baseline;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.loading {
+  width: 100px;
+  margin: 0 auto;
+  display: none;
+  
+  &.visible {
+    display: block;
+  }
+}

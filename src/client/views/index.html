@@ -23,6 +23,7 @@
         <form id="formArticle">
           <label for="url">Article to analyse</label>
           <input id="url" id="url" type="text" name="input" autofocus value="" placeholder="Including the http part">
+          <p class="formError"></p>
           <input type="submit" value="submit">
         </form>
       </section>
@@ -30,12 +31,51 @@
       <section class="results">
         <h2><strong>The super-thorough analysis</strong></h2>
         <p><em>Trust me, we know what we're doing.</em></p>
-        <div id="results-container"></div>
+        <div id="results-container">
+          <dl>
+            <dd>Model used</dd>
+            <dt class="results-model"></dt>
+            <dd>Is it ironic</dd>
+            <dt class="results-irony"></dt>
+            <dd>Is it objective</dd>
+            <dt class="results-subjectivity"></dt>
+          </dl>
+        </div>
       </section>
+
+      <div class="loading">
+        <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+          <circle fill="#ccc" stroke="none" cx="6" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.1"/>
+          </circle>
+          <circle fill="#ccc" stroke="none" cx="26" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.2"/>
+          </circle>
+          <circle fill="#ccc" stroke="none" cx="46" cy="50" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.3"/>
+          </circle>
+        </svg>
+      </div>
     </main>
 
     <footer>
-      <p>Coded by Alex Lillo. Sentiment analysis done by <a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Meaning Cloud</a>.</p>
+      <p>Coded by Alex Lillo. Sentiment analysis done by <a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Meaning Cloud</a>. Awesome animated loader svg by <a href="https://codepen.io/nikhil8krishnan/pen/rVoXJa" target="_blank">Nikhil Krishnan</a></p>
       <p></p>
     </footer>
   </body>

@@ -40,3 +40,11 @@ input[type="submit"] {
   min-width: 150px;
   cursor: pointer;
 }
+
+.formError {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
