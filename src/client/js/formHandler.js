@@ -1,7 +1,7 @@
 import checkURL from './checkURL'
 import analyseSentiment from './analyseSentiment'
 
-export default async function formHandler(e) {
+export async function formHandler(e) {
   e.preventDefault()
   let article = document.getElementById('url').value
   if (checkURL(article)) {
@@ -13,7 +13,7 @@ export default async function formHandler(e) {
   }
 }
 
-function formFeedback(error) {
+export function formFeedback(error) {
   const p = document.querySelector('.formError')
   // using a switch in preparation for future cases that needs to be handled
   switch (error) {
