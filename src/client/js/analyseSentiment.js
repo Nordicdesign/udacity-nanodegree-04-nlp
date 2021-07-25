@@ -14,7 +14,6 @@ export default async function analyseSentiment(article) {
       body: JSON.stringify(payload)
     })
     let result = await response.json()
-    console.log(result)
     presentAnalysis(result)
   } catch (error) {
     console.error(error)
