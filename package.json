@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "jest --watch --coverage",
+    "test": "jest --watchAll",
     "start": "nodemon src/server/index.js",
     "dev": "webpack serve --config webpack.dev.js --port 3072 --open",
     "build": "webpack --config webpack.prod.js"
