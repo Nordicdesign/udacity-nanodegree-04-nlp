@@ -78,6 +78,15 @@
       <p>Coded by Alex Lillo. Sentiment analysis done by <a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Meaning Cloud</a>. Awesome animated loader svg by <a href="https://codepen.io/nikhil8krishnan/pen/rVoXJa" target="_blank">Nikhil Krishnan</a></p>
       <p></p>
     </footer>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+         // Use the window load event to keep the page load performant
+         window.addEventListener('load', () => {
+             navigator.serviceWorker.register('/service-worker.js');
+         });
+      }
+    </script>
   </body>
 
 </html>
